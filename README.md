@@ -8,7 +8,7 @@ Wszędzie gdzie występowało słowo PAN (kapitalikami) - zamieniłem na JEHOWA.
 tak jak w pierwszych przekładach KJV, BG
 
 ## Użycie
-
+```
 użycie: kjv [flagi] [odnośnik...]
 
 Flagi:
@@ -44,16 +44,16 @@ Odnośnik:
     <Księga>:<Rozdział>/<Wyszukiwanie>
         Wszystkie wersety w rozdziale księgi pasujące do wzorca
     usage: kjv [flags] [reference...]
-
+```
     
 ## 👷♂
 
 Aby skompilować kjv, możesz sklonować repozytorium, a następnie uruchomić polecenie make:
-
+```
     git clone https://github.com/layeh/kjv.git
     cd kjv
     make
-
+```
 ## Licencja
 
 Domena publiczna
