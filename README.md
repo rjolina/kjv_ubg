@@ -1,53 +1,59 @@
 
-# kjv 
+# kjv-ubg 
 
-Read the Word of God from your terminal
+## Uwspółcześniona Biblia Gdańska w tearminalu
+Wszędzie gdzie występowało słowo PAN (kapitalikami) - zamieniłem na JEHOWA. Powód ten jest czysto estetyczny - lubię jego tradycyjny, polski wydźwięk. Jest ono tak samo poprawne jak spolszczone Jezus (a nie Jeszua, Maryja (a nie Miriam) itd. itp. Jak komuś się nie podoba można sobie to zmienić w pliku /kjv/data/kjv.tsv
 
-## Usage
+## W planach dodanie apokryfów ⛪
+tak jak w pierwszych przekładach KJV, BG
 
+## Użycie
+
+użycie: kjv [flagi] [odnośnik...]
+
+Flagi:
+  -A liczba  pokaż liczbę wersetów kontekstu po dopasowanych wersetach
+  -B liczba  pokaż liczbę wersetów kontekstu przed dopasowanymi wersetami
+  -C         pokaż dopasowane wersety w kontekście rozdziału
+  -e         wyróżnianie numerów rozdziałów i wersetów
+             (domyślne, gdy wyjście jest na konsoli)
+  -p         wyjście do programu less z grupowaniem rozdziałów, odstępami, wcięciami
+             i zawijaniem wierszy
+             (domyślne, gdy wyjście jest na TTY)
+  -l         lista ksiąg
+  -h         pokaż pomoc
+
+Odnośnik:
+    <Księga>
+        Indywidualna księga
+    <Księga>:<Rozdział>
+        Indywidualny rozdział księgi
+    <Księga>:<Rozdział>:<Werset>[,<Werset>]...
+        Indywidualny werset(wersety) z określonego rozdziału księgi
+    <Księga>:<Rozdział>-<Rozdział>
+        Zakres rozdziałów w księdze
+    <Księga>:<Rozdział>:<Werset>-<Werset>
+        Zakres wersetów w rozdziale księgi
+    <Księga>:<Rozdział>:<Werset>-<Rozdział>:<Werset>
+        Zakres rozdziałów i wersetów w księdze
+
+    /<Wyszukiwanie>
+        Wszystkie wersety pasujące do wzorca
+    <Księga>/<Wyszukiwanie>
+        Wszystkie wersety w księdze pasujące do wzorca
+    <Księga>:<Rozdział>/<Wyszukiwanie>
+        Wszystkie wersety w rozdziale księgi pasujące do wzorca
     usage: kjv [flags] [reference...]
 
-    Flags:
-      -A num  show num verses of context after matching verses
-      -B num  show num verses of context before matching verses
-      -C      show matching verses in context of the chapter
-      -e      highlighting of chapters and verse numbers
-              (default when output is a TTY)
-      -p      output to less with chapter grouping, spacing, indentation,
-              and line wrapping
-              (default when output is a TTY)
-      -l      list books
-      -h      show help
+    
+## 👷♂
 
-    Reference:
-        <Book>
-            Individual book
-        <Book>:<Chapter>
-            Individual chapter of a book
-        <Book>:<Chapter>:<Verse>[,<Verse>]...
-            Individual verse(s) of a specific chapter of a book
-        <Book>:<Chapter>-<Chapter>
-            Range of chapters in a book
-        <Book>:<Chapter>:<Verse>-<Verse>
-            Range of verses in a book chapter
-        <Book>:<Chapter>:<Verse>-<Chapter>:<Verse>
-            Range of chapters and verses in a book
-
-        /<Search>
-            All verses that match a pattern
-        <Book>/<Search>
-            All verses in a book that match a pattern
-        <Book>:<Chapter>/<Search>
-            All verses in a chapter of a book that match a pattern
-
-## Build
-
-kjv can be built by cloning the repository and then running make:
+Aby skompilować kjv, możesz sklonować repozytorium, a następnie uruchomić polecenie make:
 
     git clone https://github.com/layeh/kjv.git
     cd kjv
     make
 
-## License
+## Licencja
 
-Public domain
+Domena publiczna
