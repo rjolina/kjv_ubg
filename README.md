@@ -2,7 +2,7 @@
 # kjv-ubg 
 
 ## Uwspółcześniona Biblia Gdańska w tearminalu
-Wszędzie gdzie występowało słowo PAN (kapitalikami) - zamieniłem na JEHOWA. Powód ten jest czysto estetyczny - lubię jego tradycyjny, polski wydźwięk. Jest ono tak samo poprawne jak spolszczone Jezus (a nie Jeszua, Maryja (a nie Miriam) itd. itp. Jak komuś się nie podoba można sobie to zmienić w pliku /kjv/data/kjv.tsv
+...
 
 ## W planach dodanie apokryfów ⛪
 tak jak w pierwszych przekładach KJV, BG
