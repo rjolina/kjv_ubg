@@ -5,17 +5,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "kjv_data.h"
-#include "kjv_ref.h"
+#include "ubg_data.h"
+#include "ubg_ref.h"
 
-kjv_ref *
-kjv_newref()
+ubg_ref *
+ubg_newref()
 {
-    return calloc(1, sizeof(kjv_ref));
+    return calloc(1, sizeof(ubg_ref));
 }
 
 void
-kjv_freeref(kjv_ref *ref)
+ubg_freeref(ubg_ref *ref)
 {
     if (ref) {
         free(ref->search_str);
@@ -26,7 +26,7 @@ kjv_freeref(kjv_ref *ref)
 
 
 static bool
-kjv_bookequal(const char *a, const char *b, bool short_match)
+ubg_bookequal(const char *a, const char *b, bool short_match)
 {
     for (size_t i = 0, j = 0; ; ) {
         if ((!a[i] && !b[j]) || (short_match && !b[j])) {
@@ -45,19 +45,19 @@ kjv_bookequal(const char *a, const char *b, bool short_match)
 }
 
 static bool
-kjv_book_matches(const kjv_book *book, const char *s)
+ubg_book_matches(const ubg_book *book, const char *s)
 {
-    return kjv_bookequal(book->name, s, false) ||
-        kjv_bookequal(book->abbr, s, false) ||
-        kjv_bookequal(book->name, s, true);
+    return ubg_bookequal(book->name, s, false) ||
+        ubg_bookequal(book->abbr, s, false) ||
+        ubg_bookequal(book->name, s, true);
 }
 
 static int
-kjv_book_fromname(const char *s)
+ubg_book_fromname(const char *s)
 {
-    for (int i = 0; i < kjv_books_length; i++) {
-        const kjv_book *book = &kjv_books[i];
-        if (kjv_book_matches(book, s)) {
+    for (int i = 0; i < ubg_books_length; i++) {
+        const ubg_book *book = &ubg_books[i];
+        if (ubg_book_matches(book, s)) {
             return book->number;
         }
     }
@@ -65,7 +65,7 @@ kjv_book_fromname(const char *s)
 }
 
 static int
-kjv_scanbook(const char *s, int *n)
+ubg_scanbook(const char *s, int *n)
 {
     int i;
     int mode = 0;
@@ -85,7 +85,7 @@ kjv_scanbook(const char *s, int *n)
 }
 
 int
-kjv_parseref(kjv_ref *ref, const char *ref_str)
+ubg_parseref(ubg_ref *ref, const char *ref_str)
 {
     // 1. <book>
     // 2. <book>:?<chapter>
@@ -111,10 +111,10 @@ kjv_parseref(kjv_ref *ref, const char *ref_str)
     regfree(&ref->search);
 
     int n = 0;
-    if (kjv_scanbook(ref_str, &n) == 1) {
+    if (ubg_scanbook(ref_str, &n) == 1) {
         // 1, 2, 3, 3a, 4, 5, 6, 8, 9
         char *bookname = strndup(ref_str, n);
-        ref->book = kjv_book_fromname(bookname);
+        ref->book = ubg_book_fromname(bookname);
         free(bookname);
         ref_str = &ref_str[n];
     } else if (ref_str[0] == '/') {

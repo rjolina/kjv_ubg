@@ -1,5 +1,5 @@
 
-# kjv-ubg 
+# ubg-ubg 
 test
 ## Uwspółcześniona Biblia Gdańska w tearminalu
 ...
@@ -9,7 +9,7 @@ tak jak w pierwszych przekładach KJV, BG
 
 ## Użycie
 ```
-użycie: kjv [flagi] [odnośnik...]
+użycie: ubg [flagi] [odnośnik...]
 
 Flagi:
   -A liczba  pokaż liczbę wersetów kontekstu po dopasowanych wersetach
@@ -43,15 +43,15 @@ Odnośnik:
         Wszystkie wersety w księdze pasujące do wzorca
     <Księga>:<Rozdział>/<Wyszukiwanie>
         Wszystkie wersety w rozdziale księgi pasujące do wzorca
-    usage: kjv [flags] [reference...]
+    usage: ubg [flags] [reference...]
 ```
     
 ## 👷♂
 
-Aby skompilować kjv, możesz sklonować repozytorium, a następnie uruchomić polecenie make:
+Aby skompilować ubg, możesz sklonować repozytorium, a następnie uruchomić polecenie make:
 ```
-    git clone https://github.com/layeh/kjv.git
-    cd kjv
+    git clone https://github.com/layeh/ubg.git
+    cd ubg
     make
 ```
 ## Licencja

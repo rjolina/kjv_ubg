@@ -10,7 +10,7 @@
 #define KJV_REF_RANGE 4
 #define KJV_REF_RANGE_EXT 5
 
-typedef struct kjv_ref {
+typedef struct ubg_ref {
     int type;
     unsigned int book;
     unsigned int chapter;
@@ -20,13 +20,13 @@ typedef struct kjv_ref {
     intset *verse_set;
     char *search_str;
     regex_t search;
-} kjv_ref;
+} ubg_ref;
 
-kjv_ref *
-kjv_newref();
+ubg_ref *
+ubg_newref();
 
 void
-kjv_freeref(kjv_ref *ref);
+ubg_freeref(ubg_ref *ref);
 
 int
-kjv_parseref(kjv_ref *ref, const char *ref_str);
+ubg_parseref(ubg_ref *ref, const char *ref_str);
